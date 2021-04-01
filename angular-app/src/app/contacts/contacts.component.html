@@ -1,0 +1,38 @@
+<h2>Lista kontaktów</h2>
+
+<div><button mat-button-toggle-group class="add-contact-button" routerLink="/dodaj_kontakt">Dodaj</button></div>
+<br>
+<input type="text" [(ngModel)]="filterValue"/>
+<button type="button" name="Filter" (click)="filter()">Filtruj</button>
+<div class="panel-body">
+  <table class="table table-striped" >
+    <thead>
+    <tr class="border-element">
+      <th class="border-element">Nazwa kontaktu</th>
+      <th class="border-element">Rodzaj kontaktu</th>
+      <th class="border-element">Email</th>
+      <th class="border-element">Telefon</th>
+      <th class="border-element">Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let contact of filteredItems">
+      <td id="hover-contact" [routerLink]="showDetails(contact)"
+          [queryParams]="{id: contact.id}">{{getContactName(contact)}}</td>
+      <td>{{getContactType(contact)}}</td>
+      <td>{{getEmail(contact)}}</td>
+      <td>{{getPhoneNumber(contact)}}</td>
+      <td>
+        <mat-icon aria-hidden="false" aria-label="Example create-black icon" [routerLink]="getRouteLink(contact)"
+                  [queryParams]="{id: contact.id}" class="hover-icons">create
+        </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example close-black icon" (click)="deleteContact(contact.id)"
+                  class="hover-icons">close
+        </mat-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+ 
+</div>

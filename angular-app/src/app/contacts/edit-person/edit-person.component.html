@@ -1,0 +1,18 @@
+<h2 style="text-align: center">Edycja</h2>
+
+<br>
+<form (ngSubmit)="onSubmit()">
+
+  <div class="container">
+    <app-person-general-informations #person ></app-person-general-informations>
+    <app-base-information #baseInformation></app-base-information>
+
+    <app-address #address></app-address>
+    <app-way-of-obtaining #wayOfObtainingComponent></app-way-of-obtaining>
+    <router-outlet></router-outlet>
+  </div>
+  <div id="submit">
+    <button mat-button type="submit" class="btn btn-success" (click)="save()">Zapisz</button>
+  </div>
+</form>
+
