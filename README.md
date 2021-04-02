@@ -16,7 +16,7 @@ This app allows:
 
 ## Technologies
 * [Spring Boot] - version 2.3.0.RELEASE
-* [Angular] - version 8.2.3
+* [Angular] - version 11
 
 
 ## Status
