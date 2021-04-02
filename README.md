@@ -15,7 +15,6 @@ This app allows:
 - view contact details
 
 ## Technologies
-* [Spring Boot] - version 2.3.0.RELEASE
 * [Angular] - version 11
 
 
